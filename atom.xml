@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://P-Y-Y.github.io</id>
     <title>Sheep&apos;s Blog</title>
-    <updated>2020-06-27T08:58:00.886Z</updated>
+    <updated>2020-06-27T09:01:12.216Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://P-Y-Y.github.io"/>
     <link rel="self" href="https://P-Y-Y.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://P-Y-Y.github.io/images/avatar.png</logo>
     <icon>https://P-Y-Y.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Sheep&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[QAQ]]></title>
+        <id>https://P-Y-Y.github.io/post/qaq/</id>
+        <link href="https://P-Y-Y.github.io/post/qaq/">
+        </link>
+        <updated>2020-06-27T09:00:46.000Z</updated>
+        <content type="html"><![CDATA[<p>“我就是干啥啥不行，跟教练吵架第一名。</p>
+<p>前阵子我压力实在是太大了！你知不知道这种感觉？就是大早上被教练叫醒，他告诉你要再考一次模拟赛，我说我不行，他说你可以！</p>
+<p>你们看，老天不一定是爱神犇，他的万分之一也会宠幸到我们这些笨小孩。所以，不要放弃平庸和笨笨的自己，说不定老天就是喜欢你，他就是让很多人喜欢你，你就配拥有这些爱！</p>
+<p>但这些爱太沉重了哇！我每天都要爬起来考模拟赛！我每天都好焦虑啊！我一考炸就骂我但我想说我真的努力好久啦！我一上考场就考炸我也不知道为什么！哇！”</p>
+<p>——引自超越妹妹的毕业宣言，哈哈哈自己改动了一点</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[HBOI2020游记]]></title>
         <id>https://P-Y-Y.github.io/post/hboi2020-you-ji/</id>
