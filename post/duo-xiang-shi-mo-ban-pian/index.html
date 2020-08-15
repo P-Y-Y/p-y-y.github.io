@@ -180,7 +180,7 @@
                     <article class="post-wrap">
                         <header class="post-header">
                             <h1 class="post-title">
-                                Hello Gridea
+                                多项式模板篇
                             </h1>
                             
                                     <!--zh-->
@@ -189,18 +189,12 @@
                                         <a itemprop="author" rel="author" href="/">
                                             Sheep's Blog
                                         </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2018-12-12</a></span>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-08-15</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">1.0
+                                    href="#">7.2
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">298</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">1158</a></span>
                                         
-                                            <span class="post-category">&#x5206;&#x7C7B;:
-                                
-                                <a href="https://P-Y-Y.github.io/tag/fAWHLxEE6/">Gridea</a>
-                                
-                            </span>
-                                            
                                                 阅读量:
                                                 <span data-hk-page="current"> - </span>
                                                 
@@ -208,30 +202,227 @@
                                     
                         </header>
                         
-                            <img class="post-feature-image" src="https://P-Y-Y.github.io/post-images/hello-gridea.png" alt="">
-                          
                         <div class="post-content">
-                            <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+                            <p><strong>RT，全都是模板。</strong></p>
+<h3 id="fft">FFT</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cmath&gt;
+#define gc (getchar())
+#define gs (ch&lt;'0'||ch&gt;'9')
+using namespace std;
+const int maxn=2e6+111;
+const double Pi=acos(-1.0);
+int N,M;
+struct cp
+{
+	double x,y;
+	cp (double xx=0,double yy=0) {x=xx,y=yy;}
+}A[maxn],B[maxn];
+cp operator + (cp a,cp b) {return cp(a.x+b.x,a.y+b.y);}
+cp operator - (cp a,cp b) {return cp(a.x-b.x,a.y-b.y);}
+cp operator * (cp a,cp b) {return cp(a.x*b.x-a.y*b.y,a.x*b.y+a.y*b.x);}
+void FFT(int tot,cp *a,int ty)
+{
+	if(tot==1) return;
+	cp a1[(tot&gt;&gt;1)+7],a2[(tot&gt;&gt;1)+7];
+	for(int i=0;i&lt;=tot;i+=2)
+		a1[i&gt;&gt;1]=a[i],a2[i&gt;&gt;1]=a[i+1];
+	FFT(tot&gt;&gt;1,a1,ty);
+	FFT(tot&gt;&gt;1,a2,ty);
+	cp wn=cp(cos(2.0*Pi/tot),ty*sin(2.0*Pi/tot)),w=cp(1,0);
+	for(int i=0;i&lt;(tot&gt;&gt;1);i++,w=w*wn)
+		a[i]=a1[i]+w*a2[i],
+		a[i+(tot&gt;&gt;1)]=a1[i]-w*a2[i];
+}
+void ri(int &amp;x)
+{
+	x=0;char ch=gc;
+	while( gs ) ch=gc;
+	while(!gs ) x=x*10+ch-'0',ch=gc;
+}
+void wt(int x)
+{
+	if(x&lt;0) putchar('-'),x*=-1;
+	if(x&gt;9) wt(x/10);
+	putchar(x%10+'0');
+}
+int main()
+{
+	ri(N),ri(M);
+	int x;
+	for(int i=0;i&lt;=N;i++) 
+		ri(x),A[i].x=x;
+	for(int i=0;i&lt;=M;i++) 
+		ri(x),B[i].x=x;
+	int tot=1;
+	while(tot&lt;N+M+2) tot&lt;&lt;=1; 
+	FFT(tot,A,1);
+	FFT(tot,B,1);
+	for(int i=0;i&lt;=tot;i++) A[i]=A[i]*B[i];
+	FFT(tot,A,-1);
+	for(int i=0;i&lt;=N+M;i++) wt((int)(A[i].x/tot+0.5)),putchar(' ');
+	return 0;
+}
+</code></pre>
+<h3 id="ntt">NTT</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+const int maxn=3e6+111,g=3,mo=998244353;
+int N,M,tot=1;
+int rev[maxn];
+int ksm(int x,int tt)
+{
+	int res=1;
+	while(tt)
+	{
+		if(tt&amp;1) res=1ll*res*x%mo;
+		x=1ll*x*x%mo;
+		tt&gt;&gt;=1;
+	}
+	return res;
+}
+void NTT(int *a,int ty)
+{
+	for(int i=0;i&lt; tot;i++) if(i&lt;rev[i]) swap(a[i],a[rev[i]]);
+	for(int len=2;len&lt;=tot;len&lt;&lt;=1)
+	{
+		int tmp=ksm(g,(mo-1)/len);
+		if(ty==-1) tmp=ksm(tmp,mo-2);
+		for(int L=0;L&lt; tot;L+=len)
+		{
+			int w=1;
+			for(int k=L;k&lt; L+(len&gt;&gt;1);k++,w=1ll*w*tmp%mo)
+			{
+				int x=a[k],y=1ll*w*a[k+(len&gt;&gt;1)]%mo;
+				a[k]=(x+y)%mo,a[k+(len&gt;&gt;1)]=(x-y+mo)%mo;
+			}	
+		}	
+	} 
+}
+int A[maxn],B[maxn];
+#define gc (getchar())
+#define gs (ch&lt;'0'||ch&gt;'9')
+void r(int &amp;x)
+{
+	x=0;char ch=gc;
+	while( gs ) ch=gc;
+	while(!gs ) x=x*10+ch-'0',ch=gc;
+}
+void wt(int x)
+{
+	if(x&gt;9) wt(x/10);
+	putchar(x%10+'0');
+}
+int main()
+{
+	r(N),r(M);
+	for(int i=0;i&lt;=N;i++) r(A[i]);
+	for(int i=0;i&lt;=M;i++) r(B[i]);
+	while(tot&lt;=N+M) tot&lt;&lt;=1;
+	for(int i=0;i&lt; tot;i++) rev[i]=(rev[i&gt;&gt;1]&gt;&gt;1)|((i&amp;1)?tot&gt;&gt;1:0);
+	NTT(A,1);NTT(B,1);
+	for(int i=0;i&lt; tot;i++) A[i]=1ll*A[i]*B[i]%mo;
+	NTT(A,-1);
+	int inv=ksm(tot,mo-2);
+	for(int i=0;i&lt;=N+M;i++) wt(1ll*A[i]*inv%mo),putchar(' ');
+	return 0;
+} 
+</code></pre>
+<h3 id="fwt">FWT</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+using namespace std;
+const int maxn=(1&lt;&lt;18)+1,mo=998244353;
+int N;
+int A[maxn],B[maxn],a[maxn],b[maxn];
+#define gc (getchar())
+#define gs (ch&lt;'0'||ch&gt;'9')
+void ri(int &amp;x)
+{
+	x=0;int f=1;char ch=gc;
+	while( gs ) {if(ch=='-') f=-1;ch=gc;}
+	while(!gs ) x=x*10+ch-'0',ch=gc;
+	x*=f;
+}
+void wt(int x)
+{
+	if(x&gt;9) wt(x/10);
+	putchar(x%10+'0');
+}
+void read()
+{
+	ri(N);
+	N=1&lt;&lt;N;
+	for(int i=0;i&lt; N;i++) ri(A[i]),A[i]=(A[i]+mo)%mo;
+	for(int i=0;i&lt; N;i++) ri(B[i]),B[i]=(B[i]+mo)%mo;
+}
+void init()
+{
+	memcpy(a,A,N+7&lt;&lt;2);
+	memcpy(b,B,N+7&lt;&lt;2);
+}
+void output()
+{
+	for(int i=0;i&lt; N;i++) wt(a[i]),putchar(' ');
+	putchar('\n');
+}
+void upd(int &amp;x,int y)
+{
+	y=y&lt;0?y+mo:y;
+	x=(x+y)%mo;
+}
+void OR(int *f,int x)
+{
+	for(int k=2;k&lt;=N;k&lt;&lt;=1)
+		for(int i=0;i&lt; N;i+=k)
+			for(int j=i;j&lt; i+k/2;j++)
+				upd(f[j+k/2],f[j]*x);
+}
+void AND(int *f,int x)
+{
+	for(int k=2;k&lt;=N;k&lt;&lt;=1)
+		for(int i=0;i&lt; N;i+=k)
+			for(int j=i;j&lt; i+k/2;j++)
+				upd(f[j],f[j+k/2]*x);
+}
+void XOR(int *f,int x)
+{
+	for(int k=2;k&lt;=N;k&lt;&lt;=1)
+		for(int i=0;i&lt; N;i+=k)
+			for(int j=i;j&lt; i+k/2;j++)
+			{
+				int aa=f[j],bb=f[j+k/2];
+				f[j]=(aa+bb)%mo,f[j+k/2]=(aa-bb+mo)%mo;
+				f[j]=1ll*f[j]*x%mo,f[j+k/2]=1ll*f[j+k/2]*x%mo;
+			}	
+}
+void MUL()
+{
+	for(int i=0;i&lt; N;i++) a[i]=(1ll*a[i]*b[i])%mo;
+}
+int ksm(int x,int tt)
+{
+	int res=1;
+	while(tt)
+	{
+		if(tt&amp;1) res=1ll*res*x%mo;
+		x=1ll*x*x%mo;
+		tt&gt;&gt;=1; 
+	}
+	return res;
+}
+int main()
+{
+	read();
+	init(); OR(a,1);  OR(b,1);  MUL(); OR(a,-1);  output();
+	init(); AND(a,1); AND(b,1); MUL(); AND(a,-1); output();
+	init(); XOR(a,1); XOR(b,1); MUL(); XOR(a,ksm(2,mo-2)); output();
+	return 0;
+}
+</code></pre>
 
                         </div>
                         
@@ -239,7 +430,13 @@
                                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
+<li>
+<ul>
+<li><a href="#fft">FFT</a></li>
+<li><a href="#ntt">NTT</a></li>
+<li><a href="#fwt">FWT</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -257,7 +454,7 @@
 
                                                 <p class="copyright-item">
                                                     <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
-                                                    <span><a href="https://P-Y-Y.github.io/post/hello-gridea/">https://P-Y-Y.github.io/post/hello-gridea/</a></span>
+                                                    <span><a href="https://P-Y-Y.github.io/post/duo-xiang-shi-mo-ban-pian/">https://P-Y-Y.github.io/post/duo-xiang-shi-mo-ban-pian/</a></span>
                                                 </p>
 
                                                 <p class="copyright-item">
@@ -272,13 +469,9 @@
                                                                     <span style="margin-right:15px">
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://P-Y-Y.github.io/post/hello-gridea/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://P-Y-Y.github.io/post/hello-gridea/&sharesource=qzone&title=Hello Gridea&pics=https://P-Y-Y.github.io/images/avatar.png?v=1597495371050&summary=&lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
-✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
-"><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://P-Y-Y.github.io/post/hello-gridea/&sharesource=weibo&title=Hello Gridea + " - " + &lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
-✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
-&pic="https://P-Y-Y.github.io/images/avatar.png?v=1597495371050 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://P-Y-Y.github.io/post/duo-xiang-shi-mo-ban-pian/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://P-Y-Y.github.io/post/duo-xiang-shi-mo-ban-pian/&sharesource=qzone&title=多项式模板篇&pics=https://P-Y-Y.github.io/images/avatar.png?v=1597495371050&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://P-Y-Y.github.io/post/duo-xiang-shi-mo-ban-pian/&sharesource=weibo&title=多项式模板篇 + " - " + &pic="https://P-Y-Y.github.io/images/avatar.png?v=1597495371050 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -288,12 +481,6 @@
                                                                                     <span>&#x6807;&#x7B7E;:</span>
                                                                                     <span class="tag ">
                         
-                        
-                        <a href="https://P-Y-Y.github.io/tag/fAWHLxEE6/">#
-                    Gridea
-                        </a>
-                        
-                            
                                 </span>
                                                                                 </div>
                                                                                 <div>
@@ -309,6 +496,10 @@
                                                                                 <section class="post-nav">
                                                                                     
                                                                                             
+                                                                                                <a class="next" rel="next" href="https://P-Y-Y.github.io/post/some-tricks/">
+                                                                                                    Some Tricks
+                                                                                                </a>
+                                                                                                
                                                                                 </section>
                     </article>
                 </div>

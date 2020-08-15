@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://P-Y-Y.github.io</id>
     <title>Sheep&apos;s Blog</title>
-    <updated>2020-08-15T12:25:20.709Z</updated>
+    <updated>2020-08-15T12:43:03.736Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://P-Y-Y.github.io"/>
     <link rel="self" href="https://P-Y-Y.github.io/atom.xml"/>
@@ -11,20 +11,244 @@
     <icon>https://P-Y-Y.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Sheep&apos;s Blog</rights>
     <entry>
+        <title type="html"><![CDATA[多项式模板篇]]></title>
+        <id>https://P-Y-Y.github.io/post/duo-xiang-shi-mo-ban-pian/</id>
+        <link href="https://P-Y-Y.github.io/post/duo-xiang-shi-mo-ban-pian/">
+        </link>
+        <updated>2020-08-15T12:38:15.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>RT，全都是模板。</strong></p>
+<h3 id="fft">FFT</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cmath&gt;
+#define gc (getchar())
+#define gs (ch&lt;'0'||ch&gt;'9')
+using namespace std;
+const int maxn=2e6+111;
+const double Pi=acos(-1.0);
+int N,M;
+struct cp
+{
+	double x,y;
+	cp (double xx=0,double yy=0) {x=xx,y=yy;}
+}A[maxn],B[maxn];
+cp operator + (cp a,cp b) {return cp(a.x+b.x,a.y+b.y);}
+cp operator - (cp a,cp b) {return cp(a.x-b.x,a.y-b.y);}
+cp operator * (cp a,cp b) {return cp(a.x*b.x-a.y*b.y,a.x*b.y+a.y*b.x);}
+void FFT(int tot,cp *a,int ty)
+{
+	if(tot==1) return;
+	cp a1[(tot&gt;&gt;1)+7],a2[(tot&gt;&gt;1)+7];
+	for(int i=0;i&lt;=tot;i+=2)
+		a1[i&gt;&gt;1]=a[i],a2[i&gt;&gt;1]=a[i+1];
+	FFT(tot&gt;&gt;1,a1,ty);
+	FFT(tot&gt;&gt;1,a2,ty);
+	cp wn=cp(cos(2.0*Pi/tot),ty*sin(2.0*Pi/tot)),w=cp(1,0);
+	for(int i=0;i&lt;(tot&gt;&gt;1);i++,w=w*wn)
+		a[i]=a1[i]+w*a2[i],
+		a[i+(tot&gt;&gt;1)]=a1[i]-w*a2[i];
+}
+void ri(int &amp;x)
+{
+	x=0;char ch=gc;
+	while( gs ) ch=gc;
+	while(!gs ) x=x*10+ch-'0',ch=gc;
+}
+void wt(int x)
+{
+	if(x&lt;0) putchar('-'),x*=-1;
+	if(x&gt;9) wt(x/10);
+	putchar(x%10+'0');
+}
+int main()
+{
+	ri(N),ri(M);
+	int x;
+	for(int i=0;i&lt;=N;i++) 
+		ri(x),A[i].x=x;
+	for(int i=0;i&lt;=M;i++) 
+		ri(x),B[i].x=x;
+	int tot=1;
+	while(tot&lt;N+M+2) tot&lt;&lt;=1; 
+	FFT(tot,A,1);
+	FFT(tot,B,1);
+	for(int i=0;i&lt;=tot;i++) A[i]=A[i]*B[i];
+	FFT(tot,A,-1);
+	for(int i=0;i&lt;=N+M;i++) wt((int)(A[i].x/tot+0.5)),putchar(' ');
+	return 0;
+}
+</code></pre>
+<h3 id="ntt">NTT</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+using namespace std;
+const int maxn=3e6+111,g=3,mo=998244353;
+int N,M,tot=1;
+int rev[maxn];
+int ksm(int x,int tt)
+{
+	int res=1;
+	while(tt)
+	{
+		if(tt&amp;1) res=1ll*res*x%mo;
+		x=1ll*x*x%mo;
+		tt&gt;&gt;=1;
+	}
+	return res;
+}
+void NTT(int *a,int ty)
+{
+	for(int i=0;i&lt; tot;i++) if(i&lt;rev[i]) swap(a[i],a[rev[i]]);
+	for(int len=2;len&lt;=tot;len&lt;&lt;=1)
+	{
+		int tmp=ksm(g,(mo-1)/len);
+		if(ty==-1) tmp=ksm(tmp,mo-2);
+		for(int L=0;L&lt; tot;L+=len)
+		{
+			int w=1;
+			for(int k=L;k&lt; L+(len&gt;&gt;1);k++,w=1ll*w*tmp%mo)
+			{
+				int x=a[k],y=1ll*w*a[k+(len&gt;&gt;1)]%mo;
+				a[k]=(x+y)%mo,a[k+(len&gt;&gt;1)]=(x-y+mo)%mo;
+			}	
+		}	
+	} 
+}
+int A[maxn],B[maxn];
+#define gc (getchar())
+#define gs (ch&lt;'0'||ch&gt;'9')
+void r(int &amp;x)
+{
+	x=0;char ch=gc;
+	while( gs ) ch=gc;
+	while(!gs ) x=x*10+ch-'0',ch=gc;
+}
+void wt(int x)
+{
+	if(x&gt;9) wt(x/10);
+	putchar(x%10+'0');
+}
+int main()
+{
+	r(N),r(M);
+	for(int i=0;i&lt;=N;i++) r(A[i]);
+	for(int i=0;i&lt;=M;i++) r(B[i]);
+	while(tot&lt;=N+M) tot&lt;&lt;=1;
+	for(int i=0;i&lt; tot;i++) rev[i]=(rev[i&gt;&gt;1]&gt;&gt;1)|((i&amp;1)?tot&gt;&gt;1:0);
+	NTT(A,1);NTT(B,1);
+	for(int i=0;i&lt; tot;i++) A[i]=1ll*A[i]*B[i]%mo;
+	NTT(A,-1);
+	int inv=ksm(tot,mo-2);
+	for(int i=0;i&lt;=N+M;i++) wt(1ll*A[i]*inv%mo),putchar(' ');
+	return 0;
+} 
+</code></pre>
+<h3 id="fwt">FWT</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+using namespace std;
+const int maxn=(1&lt;&lt;18)+1,mo=998244353;
+int N;
+int A[maxn],B[maxn],a[maxn],b[maxn];
+#define gc (getchar())
+#define gs (ch&lt;'0'||ch&gt;'9')
+void ri(int &amp;x)
+{
+	x=0;int f=1;char ch=gc;
+	while( gs ) {if(ch=='-') f=-1;ch=gc;}
+	while(!gs ) x=x*10+ch-'0',ch=gc;
+	x*=f;
+}
+void wt(int x)
+{
+	if(x&gt;9) wt(x/10);
+	putchar(x%10+'0');
+}
+void read()
+{
+	ri(N);
+	N=1&lt;&lt;N;
+	for(int i=0;i&lt; N;i++) ri(A[i]),A[i]=(A[i]+mo)%mo;
+	for(int i=0;i&lt; N;i++) ri(B[i]),B[i]=(B[i]+mo)%mo;
+}
+void init()
+{
+	memcpy(a,A,N+7&lt;&lt;2);
+	memcpy(b,B,N+7&lt;&lt;2);
+}
+void output()
+{
+	for(int i=0;i&lt; N;i++) wt(a[i]),putchar(' ');
+	putchar('\n');
+}
+void upd(int &amp;x,int y)
+{
+	y=y&lt;0?y+mo:y;
+	x=(x+y)%mo;
+}
+void OR(int *f,int x)
+{
+	for(int k=2;k&lt;=N;k&lt;&lt;=1)
+		for(int i=0;i&lt; N;i+=k)
+			for(int j=i;j&lt; i+k/2;j++)
+				upd(f[j+k/2],f[j]*x);
+}
+void AND(int *f,int x)
+{
+	for(int k=2;k&lt;=N;k&lt;&lt;=1)
+		for(int i=0;i&lt; N;i+=k)
+			for(int j=i;j&lt; i+k/2;j++)
+				upd(f[j],f[j+k/2]*x);
+}
+void XOR(int *f,int x)
+{
+	for(int k=2;k&lt;=N;k&lt;&lt;=1)
+		for(int i=0;i&lt; N;i+=k)
+			for(int j=i;j&lt; i+k/2;j++)
+			{
+				int aa=f[j],bb=f[j+k/2];
+				f[j]=(aa+bb)%mo,f[j+k/2]=(aa-bb+mo)%mo;
+				f[j]=1ll*f[j]*x%mo,f[j+k/2]=1ll*f[j+k/2]*x%mo;
+			}	
+}
+void MUL()
+{
+	for(int i=0;i&lt; N;i++) a[i]=(1ll*a[i]*b[i])%mo;
+}
+int ksm(int x,int tt)
+{
+	int res=1;
+	while(tt)
+	{
+		if(tt&amp;1) res=1ll*res*x%mo;
+		x=1ll*x*x%mo;
+		tt&gt;&gt;=1; 
+	}
+	return res;
+}
+int main()
+{
+	read();
+	init(); OR(a,1);  OR(b,1);  MUL(); OR(a,-1);  output();
+	init(); AND(a,1); AND(b,1); MUL(); AND(a,-1); output();
+	init(); XOR(a,1); XOR(b,1); MUL(); XOR(a,ksm(2,mo-2)); output();
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Some Tricks]]></title>
         <id>https://P-Y-Y.github.io/post/some-tricks/</id>
         <link href="https://P-Y-Y.github.io/post/some-tricks/">
         </link>
         <updated>2020-07-31T07:28:59.000Z</updated>
         <content type="html"><![CDATA[<ol>
-<li>
-<p><code>n^=m^=n^=m</code> 这个可以当成<code>swap(n,m)</code>来写。</p>
-</li>
-<li>
-<p><strong>快速乘</strong>：<br>
+<li><code>n^=m^=n^=m</code> 这个可以当成<code>swap(n,m)</code>来写。</li>
+<li><strong>快速乘</strong>：<br>
 有时我们直接乘会爆long long，那么我们可以用快速乘来解决。<br>
-写法和思想可以类比快速幂：</p>
-<pre><code class="language-cpp">ll quickmul(ll a,ll b)
+写法和思想可以类比快速幂：<pre><code class="language-cpp">ll quickmul(ll a,ll b)
 {
     ll res=0;
     while(b)
@@ -37,6 +261,9 @@
 }
 </code></pre>
 </li>
+<li><code>x-y&gt;&gt;31</code>等价于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>&lt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x&lt;y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>（注意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x-y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>要在int范围内），且这样写可以快<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>倍（来自fyk的小技巧）。</li>
+<li>普通DP想不出来的时候可以考虑考虑权值存的状压DP。<br>
+...</li>
 </ol>
 ]]></content>
     </entry>
