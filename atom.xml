@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://P-Y-Y.github.io</id>
     <title>Sheep&apos;s Blog</title>
-    <updated>2020-08-16T03:57:21.121Z</updated>
+    <updated>2020-08-16T06:52:45.953Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://P-Y-Y.github.io"/>
     <link rel="self" href="https://P-Y-Y.github.io/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>https://P-Y-Y.github.io/images/avatar.png</logo>
     <icon>https://P-Y-Y.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Sheep&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[对拍&&造数据]]></title>
+        <id>https://P-Y-Y.github.io/post/dui-pai-andzao-shu-ju/</id>
+        <link href="https://P-Y-Y.github.io/post/dui-pai-andzao-shu-ju/">
+        </link>
+        <updated>2020-08-16T06:43:23.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="对拍">对拍</h3>
+<p>受zlt dalao所托，帮他写了一份对拍程序，感觉很有用，<s>一年前没认真学。</s><br>
+在此记录一下：</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main()
+{
+	int tt=0;
+	while(++tt)
+	{
+		system(&quot;maker.exe&quot;);//造数据的程序
+		system(&quot;1.exe&quot;);//程序1
+		system(&quot;2.exe&quot;);//程序2
+		printf(&quot;Case %d: &quot;,tt);//第tt组数据
+		if(system(&quot;fc 1.out 2.out&quot;))//如果没有写文件输出，那么对拍的时候是可以看到两个程序的输出的
+		{
+			printf(&quot;WA&quot;);
+			break;
+		}
+		printf(&quot;AC\n&quot;);
+	}
+	return 0;
+}
+</code></pre>
+<h3 id="造数据">造数据</h3>
+<p>（以下部分引自lcf学长1年前讲课的课件）<br>
+随机负数：先随机绝对值，在通过一个随机数的奇偶性来确定正负。<br>
+随机随机区间：随机两个端点，取较小值为左端点，较大值为右端点，如果二者相等有必要的话要再随机一遍。<br>
+随机一棵树：给每个点找一个父亲。注意随机树的树高期望是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 的，所以我们可能需要先手动构造出一组长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>的链，再来随机找父亲。<br>
+随机一张图：先随机出一棵树，再随机加入一些边。<br>
+随机一个排列：对于每个数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，在区间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>1</mn><mo separator="true">,</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[1, i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mclose">]</span></span></span></span> 内随机一个数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>，交换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">a_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的值。（其实也可以直接用 &lt;algorithm&gt;中的函数<code>random_shuffle(a+1,a+n+1)</code>。）</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【题解】[NOI2010]能量采集]]></title>
         <id>https://P-Y-Y.github.io/post/ti-jie-noi2010neng-liang-cai-ji/</id>
