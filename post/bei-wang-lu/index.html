@@ -177,33 +177,165 @@
 </script>
             <div class="main">
                 <div class="container">
-                    <div class="post-wrap archive">
-                        
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                备忘录
+                            </h1>
                             
-                                <h3>
-                                    2018
-                                </h3>
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            Sheep's Blog
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-07-31</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">0.9
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">216</a></span>
+                                        
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
+                                    </div>
+                                    
+                        </header>
+                        
+                        <div class="post-content">
+                            <ol>
+<li>
+<p><code>n^=m^=n^=m</code> 这个可以当成<code>swap(n,m)</code>来写。</p>
+</li>
+<li>
+<p><strong>快速乘</strong>：<br>
+有时我们直接乘会爆long long，那么我们可以用快速乘来解决。<br>
+写法和思想可以类比快速幂：</p>
+<pre><code class="language-cpp">ll quickmul(ll a,ll b)
+{
+    ll res=0;
+    while(b)
+    {
+        if(b&amp;1) res+=a;
+        a=(a+a)%M; 
+        b&gt;&gt;=1ll;
+    }
+    return res;
+}
+</code></pre>
+</li>
+<li>
+<p><code>x-y&gt;&gt;31</code>等价于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>&lt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x&lt;y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>（注意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x-y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>要在int范围内），且这样写可以快<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>倍（来自fyk的小技巧）。</p>
+</li>
+<li>
+<p>普通DP想不出来的时候可以考虑考虑权值存的状压DP。</p>
+</li>
+<li>
+<p>每个节点度数不超过2不仅仅只有链的情况，还有环的情况。</p>
+</li>
+<li>
+<p>数组开得太大会导致编译超时）））</p>
+</li>
+<li>
+<p><strong>会打优秀的暴力也是一种能力。</strong></p>
+</li>
+<li>
+<p>虚拟机终端内输入“vimutor”即可出现vim教程（来自zza dalao）。<br>
+...</p>
+</li>
+</ol>
+
+                        </div>
+                        
+                            <div class="post-toc">
+                                
+                            </div>
+                            
                                 
                                     
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>Sheep's Blog</span>
+                                                </p>
 
-                                        <article class="archive-item">
-                                            <a class="archive-item-link" href="https://P-Y-Y.github.io/post/hello-gridea/">
-                                                Hello Gridea
-                                            </a>
-                                            <span class="archive-item-date">2018-12-12 </span>
-                                        </article>
-                                        
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://P-Y-Y.github.io/post/bei-wang-lu/">https://P-Y-Y.github.io/post/bei-wang-lu/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
                                             
                                                 
-                    </div>
-                    <div class="pagination-container">
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://P-Y-Y.github.io/post/bei-wang-lu/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://P-Y-Y.github.io/post/bei-wang-lu/&sharesource=qzone&title=备忘录&pics=https://P-Y-Y.github.io/images/avatar.png?v=1597658940120&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://P-Y-Y.github.io/post/bei-wang-lu/&sharesource=weibo&title=备忘录 + " - " + &pic="https://P-Y-Y.github.io/images/avatar.png?v=1597658940120 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
                         
-                            
-                                    
-                                            
-                    </div>
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                        <a class="prev" rel="prev" href="https://P-Y-Y.github.io/post/duo-xiang-shi-mo-ban-pian/">
+                                                                                            多项式模板篇
+                                                                                        </a>
+                                                                                        
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://P-Y-Y.github.io/post/qaq/">
+                                                                                                    QAQ
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
                 </div>
+                
+                                            
+                                                <script type="application/javascript" src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<div id="vlaine-comment"></div>
+<script type="application/javascript">
+    new Valine({
+        el: '#vlaine-comment',
+        appId: 'YqhvponpQXbjJS1dXtJnMmw6-MdYXbMMI',
+        appKey: 'NqT6Oor5o3tP4rCF2hTGKtJ7',
+        pageSize: 10,
+        avatar: 'mp',
+        placeholder: '有什么想说的吗？',
+        visitor: true,
+        highlight: false,
+        recordIP: false,
+    })
+</script>
+                                                    
             </div>
+    </div>
+    </div>
     </div>
     
         <footer id="footer" class="footer">
@@ -272,5 +404,8 @@
                 
         </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>
