@@ -183,7 +183,7 @@
                     <article class="post-wrap">
                         <header class="post-header">
                             <h1 class="post-title">
-                                QAQ
+                                【题解】P3604 美好的每一天
                             </h1>
                             
                                     <!--zh-->
@@ -192,18 +192,12 @@
                                         <a itemprop="author" rel="author" href="/">
                                             Sheep's Blog
                                         </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-06-27</a></span>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-08-19</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">0.8
+                                    href="#">4.0
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">227</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">807</a></span>
                                         
-                                            <span class="post-category">&#x5206;&#x7C7B;:
-                                
-                                <a href="https://P-Y-Y.github.io/tag/yuCBvX2Ok/">皮一下很开心~</a>
-                                
-                            </span>
-                                            
                                                 阅读量:
                                                 <span data-hk-page="current"> - </span>
                                                 
@@ -212,16 +206,128 @@
                         </header>
                         
                         <div class="post-content">
-                            <p>“我就是干啥啥不行，跟教练吵架第一名。</p>
-<p>前阵子我压力实在是太大了！你知不知道这种感觉？就是大早上被教练叫醒，他告诉你要再考一次模拟赛，我说我不行，他说你可以！</p>
-<p>你们看，老天不一定是爱神犇，他的万分之一也会宠幸到我们这些笨小孩。所以，不要放弃平庸和笨笨的自己，说不定老天就是喜欢你，他就是让很多人喜欢你，你就配拥有这些爱！</p>
-<p>但这些爱太沉重了哇！我每天都要爬起来考模拟赛！我每天都好焦虑啊！我一考炸就骂我但我想说我真的努力好久啦！我一上考场就考炸我也不知道为什么！哇！”</p>
-<p>——引自超越妹妹的毕业宣言，哈哈哈自己改动了一点</p>
+                            <blockquote>
+<p>这道题虽然三个月前就已经做过了，但是现在再看的时候，还是不会，于是决定写一篇题解来重新整理一下思路...</p>
+</blockquote>
+<h3 id="题面简述">题面简述</h3>
+<blockquote>
+<p>给定一个字符串（只包含26个英文小写字母），每次询问一段区间内有多少个子区间满足里面的元素重排后能形成回文串。</p>
+</blockquote>
+<p>首先我们考虑在什么情况下一段区间内的元素重排后能形成回文串：</p>
+<p>1.当区间长度为奇数时，必定有一个字母的出现次数为奇数，其余字母均为偶数。</p>
+<p>2.当区间长度为偶数时，必定所有字母的出现次数为偶数。</p>
+<p>我们可以考虑利用异或的性质，</p>
+<p>用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>表示出现次数为偶数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>表示出现次数为奇数的情况。</p>
+<p>那么显然可以得知，如果我们进行前缀和处理，设前<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>位字母的出现情况为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，区间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span>内字母的出现情况即为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>l</mi></msub><mi>x</mi><mi>o</mi><mi>r</mi><msub><mi>A</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">A_lxorA_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">x</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</p>
+<p>考虑合法的情况只有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>l</mi></msub><mi>x</mi><mi>o</mi><mi>r</mi><msub><mi>A</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">A_lxorA_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">x</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的值为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span>或<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>的情况，那么我们直接预处理出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub><mi>x</mi><mi>o</mi><mi>r</mi><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">A_ixor2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">x</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span>的值，统计区间内<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub><mi>x</mi><mi>o</mi><mi>r</mi><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">A_ixor2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">x</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>出现了多少次即可。</p>
+<p>然后就可以按照普通莫队的方法去做了。</p>
+<p>代码如下：</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+using namespace std;
+const int maxn=6e4+111,maxm=6e4+111;
+int N,M,cnt,tot;
+char S[maxn];
+int ans[maxm];
+int A[maxn],B[maxn],C[maxn],D[maxn][31],T[maxn];
+struct query {
+	int l,r,id;
+	bool operator &lt; (const query b) const {return B[l]!=B[b.l]?B[l]&lt;B[b.l]:B[l]&amp;1?r&lt;b.r:r&gt;b.r;}
+}Q[maxm];
+int pos(int x)
+{
+	int tt=lower_bound(C+1,C+cnt+1,x)-C;
+	if(C[tt]==x) return tt;
+	else return N+1;
+}
+#define lowbit(x) x&amp;-x
+void add(int x)
+{
+	for(int i=0;i&lt;=25;i++) tot+=T[D[x][i]];
+	tot+=T[D[x][26]];
+	T[D[x][26]]++;
+}
+void del(int x)
+{
+	for(int i=0;i&lt;=25;i++) tot-=T[D[x][i]];
+	tot-=T[D[x][26]]-1;
+	T[D[x][26]]--;
+}
+#define gc (getchar())
+#define gs (ch&lt;'0'||ch&gt;'9')
+void ri(int &amp;x)
+{
+    x=0;char ch=gc;
+    while( gs ) ch=gc;
+    while(!gs ) x=x*10+ch-'0',ch=gc;
+}
+void wt(int x)
+{
+	if(x&gt;9) wt(x/10);
+	putchar(x%10+'0');
+}
+int main()
+{
+	ri(N),ri(M);
+	scanf(&quot;%s&quot;,S+1);
+	int block=sqrt(N);
+	for(int i=1;i&lt;=N;i++)
+	{
+		int x=S[i]-'a';
+		A[i]=A[i-1]^(1&lt;&lt;x);
+		C[i]=A[i];
+		B[i]=(i+block-1)/block;
+    }
+    C[N+1]=0;
+    sort(C+1,C+N+2);
+    cnt=unique(C+1,C+N+2)-C-1;
+    for(int i=0;i&lt;=N;i++)
+    {
+   		for(int j=0;j&lt;=25;j++) 
+		   	D[i][j]=pos(A[i]^(1&lt;&lt;j));
+   		D[i][26]=pos(A[i]);
+    }
+	for(int i=1;i&lt;=M;i++) ri(Q[i].l),ri(Q[i].r),Q[i].l--,Q[i].id=i;
+    sort(Q+1,Q+M+1);
+	int L=1,R=0;
+    for(int i=1;i&lt;=M;i++)
+    {
+    	while(L&lt;Q[i].l) del(L++);
+    	while(L&gt;Q[i].l) add(--L);
+    	while(R&lt;Q[i].r) add(++R);
+    	while(R&gt;Q[i].r) del(R--);
+    	ans[Q[i].id]=tot;
+    }
+    for(int i=1;i&lt;=M;i++) wt(ans[i]),putchar('\n');
+    return 0;
+}
+</code></pre>
+<p>时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>26</mn><mi>N</mi><mo>+</mo><mn>26</mn><mi>M</mi><msqrt><mi>M</mi></msqrt><mo>)</mo></mrow><annotation encoding="application/x-tex">O(26N+26M \sqrt M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">2</span><span class="mord">6</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.176665em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">6</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9266650000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;padding-left:0.833em;">M</span></span><span style="top:-2.886665em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11333499999999996em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 。</p>
+<p><s>好吧，即使之前做过，再做一遍的感觉和第一遍做没什么区别，全忘光了555。</s></p>
 
                         </div>
                         
                             <div class="post-toc">
-                                
+                                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E9%A2%98%E9%9D%A2%E7%AE%80%E8%BF%B0">题面简述</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
                             </div>
                             
                                 
@@ -235,7 +341,7 @@
 
                                                 <p class="copyright-item">
                                                     <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
-                                                    <span><a href="https://P-Y-Y.github.io/post/qaq/">https://P-Y-Y.github.io/post/qaq/</a></span>
+                                                    <span><a href="https://P-Y-Y.github.io/post/ti-jie-p3604-mei-hao-de-mei-yi-tian/">https://P-Y-Y.github.io/post/ti-jie-p3604-mei-hao-de-mei-yi-tian/</a></span>
                                                 </p>
 
                                                 <p class="copyright-item">
@@ -250,9 +356,9 @@
                                                                     <span style="margin-right:15px">
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://P-Y-Y.github.io/post/qaq/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://P-Y-Y.github.io/post/qaq/&sharesource=qzone&title=QAQ&pics=https://P-Y-Y.github.io/images/avatar.png?v=1597841952553&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://P-Y-Y.github.io/post/qaq/&sharesource=weibo&title=QAQ + " - " + &pic="https://P-Y-Y.github.io/images/avatar.png?v=1597841952553 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://P-Y-Y.github.io/post/ti-jie-p3604-mei-hao-de-mei-yi-tian/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://P-Y-Y.github.io/post/ti-jie-p3604-mei-hao-de-mei-yi-tian/&sharesource=qzone&title=【题解】P3604 美好的每一天&pics=https://P-Y-Y.github.io/images/avatar.png?v=1597841952553&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://P-Y-Y.github.io/post/ti-jie-p3604-mei-hao-de-mei-yi-tian/&sharesource=weibo&title=【题解】P3604 美好的每一天 + " - " + &pic="https://P-Y-Y.github.io/images/avatar.png?v=1597841952553 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -262,12 +368,6 @@
                                                                                     <span>&#x6807;&#x7B7E;:</span>
                                                                                     <span class="tag ">
                         
-                        
-                        <a href="https://P-Y-Y.github.io/tag/yuCBvX2Ok/">#
-                    皮一下很开心~
-                        </a>
-                        
-                            
                                 </span>
                                                                                 </div>
                                                                                 <div>
@@ -282,13 +382,9 @@
                                                                                 <!---->
                                                                                 <section class="post-nav">
                                                                                     
-                                                                                        <a class="prev" rel="prev" href="https://P-Y-Y.github.io/post/bei-wang-lu/">
-                                                                                            备忘录
-                                                                                        </a>
-                                                                                        
                                                                                             
-                                                                                                <a class="next" rel="next" href="https://P-Y-Y.github.io/post/hboi2020-you-ji/">
-                                                                                                    HBOI2020游记
+                                                                                                <a class="next" rel="next" href="https://P-Y-Y.github.io/post/dui-pai-andzao-shu-ju/">
+                                                                                                    对拍&amp;&amp;造数据
                                                                                                 </a>
                                                                                                 
                                                                                 </section>
