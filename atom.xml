@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://P-Y-Y.github.io</id>
     <title>Sheep&apos;s Blog</title>
-    <updated>2020-08-21T08:07:46.343Z</updated>
+    <updated>2020-08-21T10:17:04.331Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://P-Y-Y.github.io"/>
     <link rel="self" href="https://P-Y-Y.github.io/atom.xml"/>
@@ -43,7 +43,120 @@
 <p>这样虚树大体上就建完了。</p>
 <p>注意，多加入一个点并不会影响正确性，那么我们就顺便一开始把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>号节点加入虚树中，最后在虚树上进行一开始我们提到的朴素<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span>即可。</p>
 <p>时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mo>∑</mo><mi>k</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\sum klogn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</p>
-<p>代码还没敲QAQ。</p>
+<h3 id="code">Code：</h3>
+<p>不开long long 见祖宗QAQ</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+typedef long long ll;
+const int maxn=25e4+111,inf=1e9+7;
+int N,M,K,tot,tim,cnt;
+int H[maxn],h[maxn],A[maxn],dfn[maxn],fa[maxn][21],fw[maxn][21],dep[maxn],sta[maxn];
+ll dp[maxn]; 
+bool book[maxn];
+struct edge {
+	int n,v,w;
+}E[maxn&lt;&lt;1],e[maxn&lt;&lt;1];
+void addE(int u,int v,int w)
+{
+	E[++tot]=(edge){H[u],v,w};
+	H[u]=tot;
+}
+void adde(int u,int v,int w)
+{
+	e[++tot]=(edge){h[u],v,w};
+	h[u]=tot;
+}
+void dfs(int po,int step)
+{
+	dfn[po]=++tim;dep[po]=step;
+	for(int tt=1;(1&lt;&lt;tt)&lt;=step;tt++) 
+		fa[po][tt]=fa[fa[po][tt-1]][tt-1],fw[po][tt]=min(fw[po][tt-1],fw[fa[po][tt-1]][tt-1]);
+	for(int i=H[po];i;i=E[i].n)
+	{
+		int v=E[i].v;
+		if(!dfn[v]) fa[v][0]=po,fw[v][0]=E[i].w,dfs(v,step+1);
+	}
+}
+int lca(int u,int v)
+{
+	if(dep[u]&lt;dep[v]) swap(u,v);
+	for(int i=18;i&gt;=0;i--) if(dep[fa[u][i]]&gt;=dep[v]) u=fa[u][i];
+	if(u==v) return u;
+	for(int i=18;i&gt;=0;i--) if(fa[u][i]!=fa[v][i]) u=fa[u][i],v=fa[v][i];
+	return fa[u][0]; 
+}
+int getw(int u,int v)
+{
+	int sum=inf;
+	for(int i=18;i&gt;=0;i--) if(dep[fa[u][i]]&gt;=dep[v]) sum=min(sum,fw[u][i]),u=fa[u][i];
+	return sum; 
+}
+bool cmp(int a,int b)
+{
+	return dfn[a]&lt;dfn[b];
+} 
+void T_dp(int po)
+{
+	dp[po]=0;
+	for(int i=h[po];i;i=e[i].n)
+	{
+		int v=e[i].v,w=e[i].w;
+		T_dp(v);
+		if(book[v]) dp[po]=dp[po]+w;
+		else dp[po]=dp[po]+min(1ll*w,dp[v]); 
+	}
+}
+#define gc (getchar())
+#define gs (ch&lt;'0'||ch&gt;'9')
+void ri(int &amp;x)
+{
+	x=0;char ch=gc;
+	while( gs ) ch=gc;
+	while(!gs ) x=x*10+ch-'0',ch=gc;
+}
+void wt(ll x)
+{
+	if(x&gt;9) wt(x/10);
+	putchar(x%10+'0');
+}
+int main()
+{
+	ri(N);
+	int u,v,w;
+	for(int i=1;i&lt; N;i++) ri(u),ri(v),ri(w),addE(u,v,w),addE(v,u,w);
+	dfs(1,1);
+	ri(M);
+	while(M--)
+	{
+		ri(K);
+		for(int i=1;i&lt;=K;i++) ri(A[i]),book[A[i]]=1;
+		sort(A+1,A+K+1,cmp);
+		cnt=0,tot=0;
+		sta[++cnt]=1,h[1]=0;
+		for(int i=1;i&lt;=K;i++)
+			if(A[i]!=1)
+			{
+				int tt=lca(A[i],sta[cnt]);
+				if(tt==sta[cnt]) sta[++cnt]=A[i],h[A[i]]=0;
+				else {	
+					while(dfn[sta[cnt-1]]&gt;dfn[tt]) w=getw(sta[cnt],sta[cnt-1]),adde(sta[cnt-1],sta[cnt],w),sta[cnt--]=0;
+					if(sta[cnt-1]!=tt) 
+						w=getw(sta[cnt],tt),h[tt]=0,adde(tt,sta[cnt],w),sta[cnt]=tt;
+					else 
+						w=getw(sta[cnt],tt),adde(tt,sta[cnt],w),sta[cnt--]=0;
+					sta[++cnt]=A[i],h[A[i]]=0;
+				} 
+			}	
+		while(cnt&gt;1) w=getw(sta[cnt],sta[cnt-1]),adde(sta[cnt-1],sta[cnt],w),sta[cnt--]=0;
+		T_dp(1);
+		wt(dp[1]),putchar('\n');
+		for(int i=1;i&lt;=K;i++) book[A[i]]=0;
+	}
+	return 0;
+}
+</code></pre>
 ]]></content>
     </entry>
     <entry>
