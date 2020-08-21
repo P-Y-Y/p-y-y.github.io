@@ -94,7 +94,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1598013693048" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1598013816031" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -113,7 +113,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1598013693048" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1598013816031" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -232,7 +232,7 @@
 <p>这样我们就可以得到一个复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>m</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(mn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span>做法了，然鹅这显然是不行的，我们得进一步优化。</p>
 <p>观察数据范围，我们可以看出，其实每次询问的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>都是比较稀疏分布的，故其实我们都做了许多无用功——我们多考虑了许多无用的节点。</p>
 <p>那么我们考虑用一种更优的方法，忽略掉这些对答案没有什么实际影响的节点——用<strong>虚树</strong>来解决问题。</p>
-<p>我们考虑对我们的答案有影响的，<strong>必定有关键点</strong>，但我们要在虚树上维护这些点之间的位置关系，所以，我们的虚树里面还要有他们之间的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>c</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">lca</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">a</span></span></span></span>。</p>
+<p>我们考虑对我们的答案有影响的，<strong>必定有关键点</strong>，但我们要在虚树上维护这些点之间的位置关系，所以，我们的虚树里面还要有<strong>他们之间的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>c</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">lca</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">a</span></span></span></span></strong>。</p>
 <p>实际上，我们只需将这些关键点按<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>f</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">dfs</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">s</span></span></span></span>序排序，然后求出相邻两点的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>c</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">lca</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">a</span></span></span></span>，把他们加入虚树中即可。</p>
 <p>注意到多个点对的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>c</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">lca</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">a</span></span></span></span>可能是相同的，我们这里考虑用一个单调栈来避免一个节点多次入栈的情况：</p>
 <p>考虑我们用一个单调栈来维护虚树上一条链：</p>
@@ -405,8 +405,8 @@ int main()
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://P-Y-Y.github.io/post/ti-jie-p2495-sdoi2011xiao-hao-zhan/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://P-Y-Y.github.io/post/ti-jie-p2495-sdoi2011xiao-hao-zhan/&sharesource=qzone&title=【题解】P2495 [SDOI2011]消耗战&pics=https://P-Y-Y.github.io/images/avatar.png?v=1598013693048&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://P-Y-Y.github.io/post/ti-jie-p2495-sdoi2011xiao-hao-zhan/&sharesource=weibo&title=【题解】P2495 [SDOI2011]消耗战 + " - " + &pic="https://P-Y-Y.github.io/images/avatar.png?v=1598013693048 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://P-Y-Y.github.io/post/ti-jie-p2495-sdoi2011xiao-hao-zhan/&sharesource=qzone&title=【题解】P2495 [SDOI2011]消耗战&pics=https://P-Y-Y.github.io/images/avatar.png?v=1598013816031&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://P-Y-Y.github.io/post/ti-jie-p2495-sdoi2011xiao-hao-zhan/&sharesource=weibo&title=【题解】P2495 [SDOI2011]消耗战 + " - " + &pic="https://P-Y-Y.github.io/images/avatar.png?v=1598013816031 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -565,7 +565,7 @@ int main()
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1598013693048);
+                    newDate.setTime(1598013816031);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
