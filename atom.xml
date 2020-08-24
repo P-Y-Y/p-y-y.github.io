@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://P-Y-Y.github.io</id>
     <title>Sheep&apos;s Blog</title>
-    <updated>2020-08-22T00:16:55.524Z</updated>
+    <updated>2020-08-24T01:33:14.685Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://P-Y-Y.github.io"/>
     <link rel="self" href="https://P-Y-Y.github.io/atom.xml"/>
@@ -642,14 +642,15 @@ int main()
         <link href="https://P-Y-Y.github.io/post/bei-wang-lu/">
         </link>
         <updated>2020-07-31T07:28:59.000Z</updated>
-        <content type="html"><![CDATA[<ol>
+        <content type="html"><![CDATA[<h3 id="巧妙的函数写法">巧妙的函数/写法</h3>
+<ol>
 <li>
 <p><code>n^=m^=n^=m</code> 这个可以当成<code>swap(n,m)</code>来写。</p>
 </li>
 <li>
-<p><strong>快速乘</strong>：<br>
-有时我们直接乘会爆long long，那么我们可以用快速乘来解决。<br>
-写法和思想可以类比快速幂：</p>
+<p><strong>快速乘</strong>：</p>
+<p>有时我们直接乘会爆long long，那么我们可以用快速乘来解决。</p>
+<p>写法和思想可以类比快速幂：</p>
 <pre><code class="language-cpp">ll quickmul(ll a,ll b)
 {
     ll res=0;
@@ -667,24 +668,36 @@ int main()
 <p><code>x-y&gt;&gt;31</code>等价于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>&lt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x&lt;y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>（注意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x-y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>要在int范围内），且这样写可以快<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>倍（来自fyk的小技巧）。</p>
 </li>
 <li>
+<p><code>__builtin_popcount(x)</code>快速统计<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>的二进制表示中有多少个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，注意前面是两个下划线。</p>
+</li>
+<li>
+<p>亲测：C++自带的<code>min</code> <code>max</code>函数比你自己写的快多了，但要注意两个作比较的变量的类型要相同。</p>
+</li>
+</ol>
+<h3 id="做题技巧">做题技巧</h3>
+<ol>
+<li>
 <p>普通DP想不出来的时候可以考虑考虑权值存的状压DP。</p>
 </li>
 <li>
 <p>每个节点度数不超过2不仅仅只有链的情况，还有环的情况。</p>
 </li>
 <li>
+<p><strong>会打优秀的暴力也是一种能力。</strong></p>
+</li>
+</ol>
+<h3 id="经验教训">经验教训</h3>
+<ol>
+<li>
 <p>数组开得太大会导致编译超时）））</p>
 </li>
 <li>
-<p><strong>会打优秀的暴力也是一种能力。</strong></p>
+<p>注意出题人可能不按常理出牌（<s>或许并无所谓“常理”</s>），可能会在“数据范围”、“输入格式”等地方提供关键信息，注意要把题目认真仔细读完（来自NOI2020血的教训）。</p>
 </li>
-<li>
-<p>虚拟机终端内输入“vimutor”即可出现vim教程（来自zza dalao）。</p>
-</li>
-<li>
-<p>注意出题人可能不按常理出牌（<s>或许并无所谓“常理”</s>），可能会在“数据范围”、“输入格式”等地方提供关键信息，注意要把题目认真仔细读完（来自NOI2020血的教训）。<br>
-...</p>
-</li>
+</ol>
+<h3 id="小知识">小知识</h3>
+<ol>
+<li>虚拟机终端内输入“vimutor”即可出现vim教程（来自zza dalao）。</li>
 </ol>
 ]]></content>
     </entry>

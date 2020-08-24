@@ -94,7 +94,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1598055413168" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1598232791889" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -113,7 +113,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1598055413168" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1598232791889" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -194,9 +194,9 @@
                                         </a>
                                         <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-07-31</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">1.1
+                                    href="#">1.4
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">277</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">360</a></span>
                                         
                                                 阅读量:
                                                 <span data-hk-page="current"> - </span>
@@ -206,14 +206,15 @@
                         </header>
                         
                         <div class="post-content">
-                            <ol>
+                            <h3 id="巧妙的函数写法">巧妙的函数/写法</h3>
+<ol>
 <li>
 <p><code>n^=m^=n^=m</code> 这个可以当成<code>swap(n,m)</code>来写。</p>
 </li>
 <li>
-<p><strong>快速乘</strong>：<br>
-有时我们直接乘会爆long long，那么我们可以用快速乘来解决。<br>
-写法和思想可以类比快速幂：</p>
+<p><strong>快速乘</strong>：</p>
+<p>有时我们直接乘会爆long long，那么我们可以用快速乘来解决。</p>
+<p>写法和思想可以类比快速幂：</p>
 <pre><code class="language-cpp">ll quickmul(ll a,ll b)
 {
     ll res=0;
@@ -231,30 +232,56 @@
 <p><code>x-y&gt;&gt;31</code>等价于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>&lt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x&lt;y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>（注意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x-y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>要在int范围内），且这样写可以快<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>倍（来自fyk的小技巧）。</p>
 </li>
 <li>
+<p><code>__builtin_popcount(x)</code>快速统计<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>的二进制表示中有多少个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，注意前面是两个下划线。</p>
+</li>
+<li>
+<p>亲测：C++自带的<code>min</code> <code>max</code>函数比你自己写的快多了，但要注意两个作比较的变量的类型要相同。</p>
+</li>
+</ol>
+<h3 id="做题技巧">做题技巧</h3>
+<ol>
+<li>
 <p>普通DP想不出来的时候可以考虑考虑权值存的状压DP。</p>
 </li>
 <li>
 <p>每个节点度数不超过2不仅仅只有链的情况，还有环的情况。</p>
 </li>
 <li>
+<p><strong>会打优秀的暴力也是一种能力。</strong></p>
+</li>
+</ol>
+<h3 id="经验教训">经验教训</h3>
+<ol>
+<li>
 <p>数组开得太大会导致编译超时）））</p>
 </li>
 <li>
-<p><strong>会打优秀的暴力也是一种能力。</strong></p>
+<p>注意出题人可能不按常理出牌（<s>或许并无所谓“常理”</s>），可能会在“数据范围”、“输入格式”等地方提供关键信息，注意要把题目认真仔细读完（来自NOI2020血的教训）。</p>
 </li>
-<li>
-<p>虚拟机终端内输入“vimutor”即可出现vim教程（来自zza dalao）。</p>
-</li>
-<li>
-<p>注意出题人可能不按常理出牌（<s>或许并无所谓“常理”</s>），可能会在“数据范围”、“输入格式”等地方提供关键信息，注意要把题目认真仔细读完（来自NOI2020血的教训）。<br>
-...</p>
-</li>
+</ol>
+<h3 id="小知识">小知识</h3>
+<ol>
+<li>虚拟机终端内输入“vimutor”即可出现vim教程（来自zza dalao）。</li>
 </ol>
 
                         </div>
                         
                             <div class="post-toc">
-                                
+                                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%B7%A7%E5%A6%99%E7%9A%84%E5%87%BD%E6%95%B0%E5%86%99%E6%B3%95">巧妙的函数/写法</a></li>
+<li><a href="#%E5%81%9A%E9%A2%98%E6%8A%80%E5%B7%A7">做题技巧</a></li>
+<li><a href="#%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD">经验教训</a></li>
+<li><a href="#%E5%B0%8F%E7%9F%A5%E8%AF%86">小知识</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
                             </div>
                             
                                 
@@ -284,8 +311,8 @@
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
                                                                     <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://P-Y-Y.github.io/post/bei-wang-lu/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://P-Y-Y.github.io/post/bei-wang-lu/&sharesource=qzone&title=备忘录&pics=https://P-Y-Y.github.io/images/avatar.png?v=1598055413168&summary="><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://P-Y-Y.github.io/post/bei-wang-lu/&sharesource=weibo&title=备忘录 + " - " + &pic="https://P-Y-Y.github.io/images/avatar.png?v=1598055413168 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://P-Y-Y.github.io/post/bei-wang-lu/&sharesource=qzone&title=备忘录&pics=https://P-Y-Y.github.io/images/avatar.png?v=1598232791889&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://P-Y-Y.github.io/post/bei-wang-lu/&sharesource=weibo&title=备忘录 + " - " + &pic="https://P-Y-Y.github.io/images/avatar.png?v=1598232791889 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
                                                                     
@@ -434,7 +461,7 @@
                     CheckVersion();
                     
                     var newDate = new Date();
-                    newDate.setTime(1598055413168);
+                    newDate.setTime(1598232791889);
                     console.log(" Blog Update Time: " + newDate.toLocaleDateString());
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
