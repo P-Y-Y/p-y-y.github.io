@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://P-Y-Y.github.io</id>
     <title>Sheep&apos;s Blog</title>
-    <updated>2020-08-24T10:44:04.892Z</updated>
+    <updated>2020-08-25T07:52:59.438Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://P-Y-Y.github.io"/>
     <link rel="self" href="https://P-Y-Y.github.io/atom.xml"/>
@@ -57,9 +57,6 @@
 <p>每个节点度数不超过2不仅仅只有链的情况，还有环的情况。</p>
 </li>
 <li>
-<p><strong>会打优秀的暴力也是一种能力。</strong></p>
-</li>
-<li>
 <p>做DP的时候，如果转移的状态整体来说比较小，可以考虑矩阵快速幂优化（例：2020NOID1T1）</p>
 </li>
 <li>
@@ -73,6 +70,13 @@
 </li>
 <li>
 <p>注意出题人可能不按常理出牌（<s>或许并无所谓“常理”</s>），可能会在“数据范围”、“输入格式”等地方提供关键信息，注意要把题目认真仔细读完（来自NOI2020血的教训）。</p>
+</li>
+<li>
+<p><strong>会打优秀的暴力也是一种能力。</strong></p>
+</li>
+<li>
+<p>如果实在想不出来好的做法，就尽量优化自己的暴力，说不定就A了呢23333。<br>
+（fyk：NOI我都是打的暴力，没想到A了）</p>
 </li>
 </ol>
 <h3 id="小知识">小知识</h3>
