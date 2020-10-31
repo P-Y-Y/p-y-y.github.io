@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://P-Y-Y.github.io</id>
     <title>Sheep&apos;s Blog</title>
-    <updated>2020-10-31T12:06:08.546Z</updated>
+    <updated>2020-10-31T12:07:03.987Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://P-Y-Y.github.io"/>
     <link rel="self" href="https://P-Y-Y.github.io/atom.xml"/>
@@ -19,7 +19,7 @@
         <content type="html"><![CDATA[<blockquote>
 <p>因为无人问津，所以无所顾虑。</p>
 </blockquote>
-<pre><code>你还在逃避些什么呢？</code></pre>
+<p>你还在逃避些什么呢？</p>
 ]]></content>
     </entry>
     <entry>
