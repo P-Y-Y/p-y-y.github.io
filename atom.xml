@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://P-Y-Y.github.io</id>
     <title>Sheep&apos;s Blog</title>
-    <updated>2020-08-25T07:52:59.438Z</updated>
+    <updated>2020-10-31T12:06:08.546Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://P-Y-Y.github.io"/>
     <link rel="self" href="https://P-Y-Y.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://P-Y-Y.github.io/images/avatar.png</logo>
     <icon>https://P-Y-Y.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Sheep&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[每日一丧]]></title>
+        <id>https://P-Y-Y.github.io/post/mei-ri-yi-sang/</id>
+        <link href="https://P-Y-Y.github.io/post/mei-ri-yi-sang/">
+        </link>
+        <updated>2020-10-31T12:02:29.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>因为无人问津，所以无所顾虑。</p>
+</blockquote>
+<pre><code>你还在逃避些什么呢？</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[备忘录]]></title>
         <id>https://P-Y-Y.github.io/post/bei-wang-lu/</id>
@@ -61,6 +73,9 @@
 </li>
 <li>
 <p>在进行树上区间加、减时可以通过树上差分的方法来做。</p>
+</li>
+<li>
+<p>退火的时候，可以把初始温度调低一点，次数跑多一点，说不定就AC了。</p>
 </li>
 </ol>
 <h3 id="经验教训">经验教训</h3>
