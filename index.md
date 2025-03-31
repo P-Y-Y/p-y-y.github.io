@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-#Hi, I am Yuyang Peng (彭雨洋).#
+# Hi, I am Yuyang Peng (彭雨洋). #
 
 At present, I am working with Professor Yao Wan at HUST.
 
