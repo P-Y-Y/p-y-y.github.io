@@ -21,7 +21,7 @@ redirect_from:
 
 At present, I am working with Professor Yao Wan at HUST.
 
-My research interests are deeply rooted in the latest advancements in generative models, especially multimodal and LLM-based agents.
+My research interests are deeply rooted in the latest advancements in generative models, especially multimodal.
 
 
 
