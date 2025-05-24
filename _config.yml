@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Yuyang Peng"
-description              : "Homepage of Yuyang Peng"
+description              : "PhD applicant for Fall 2027"
 repository               : "P-Y-Y/p-y-y.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Yuyang Peng"
   avatar           : "images/photo.jpeg"
-  bio              : "CS student at Huazhong University of Science and Technology | PhD applicant for Fall 2027"
+  bio              : "CS student at Huazhong University of Science and Technology"
   location         : "Wuhan, China"
   employer         :
   pubmed           : 
