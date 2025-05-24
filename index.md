@@ -32,6 +32,9 @@ My research interests are deeply rooted in the latest advancements in generative
 
 Mingyang Fu, **Yuyang Peng**, Benlin Liu, Yao Wan, Dongping Chen
 
+</div>
+</div>
+
 # 🎖 Honors and Awards
 - Silver Medal, ACM-ICPC Asia Shenyang Regional Contest (2024)
 - Bronze Medal, National Olympiad in Informatics (NOI) (2021)
