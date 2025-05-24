@@ -23,8 +23,14 @@ At present, I am working with Professor Yao Wan at HUST.
 
 My research interests are deeply rooted in the latest advancements in generative models, especially multimodal.
 
+# 📝 Publications 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025 Workshop</div><img src='images/livevqa0.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
 
+[LIVEVQA: Assessing Models with Live Visual Knowledge](https://openreview.net/pdf?id=sLFrSp7xNs)
+
+Mingyang Fu, **Yuyang Peng**, Benlin Liu, Yao Wan, Dongping Chen
 
 # 🎖 Honors and Awards
 - Silver Medal, ACM-ICPC Asia Shenyang Regional Contest (2024)
