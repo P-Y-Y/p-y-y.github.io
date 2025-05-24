@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Yuyang Peng"
   avatar           : "images/photo.jpeg"
-  bio              : "Huazhong University of Science and Technology"
+  bio              : "CS student at Huazhong University of Science and Technology | PhD applicant for Fall 2027"
   location         : "Wuhan, China"
   employer         :
   pubmed           : 
@@ -37,7 +37,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : # e.g., "github username"
+  github           : "P-Y-Y"
   google_plus      :
   keybase          :
   instagram        :
