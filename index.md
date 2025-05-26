@@ -30,7 +30,9 @@ My research interests are deeply rooted in the latest advancements in generative
 
 [LIVEVQA: Assessing Models with Live Visual Knowledge](https://openreview.net/pdf?id=sLFrSp7xNs)
 
-Mingyang Fu, **Yuyang Peng**, Benlin Liu, Yao Wan, Dongping Chen
+Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Benlin Liu, Yao Wan, Dongping Chen
+
+<sup>*</sup> Equal contribution
 
 </div>
 </div>
