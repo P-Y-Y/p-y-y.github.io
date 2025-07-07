@@ -55,6 +55,3 @@ Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Benlin Liu, Yao Wan, Don
 
 # 📖 Educations
 - *2023.09 - 2027.06(expected)*, CS(Turing), Huazhong University of Science and Technology. 
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="busuanzi_container_site_pv">本页总访问量<span id="busuanzi_value_site_pv"></span>次</span>
