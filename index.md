@@ -27,7 +27,7 @@ My research interests are deeply rooted in the latest advancements in generative
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/livevqa1.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Seeking and Updating with Live Visual Knowledge** [PDF](https://arxiv.org/pdf/2504.05288)[Github](https://github.com/fumingyang2004/LIVEVQA)[Website](https://livevqa.github.io/)[Data](https://huggingface.co/datasets/ONE-Lab/LiveVQA-new/tree/main)
+**Seeking and Updating with Live Visual Knowledge** [[PDF]](https://arxiv.org/pdf/2504.05288)[[Github]](https://github.com/fumingyang2004/LIVEVQA)[[Website]](https://livevqa.github.io/)[[Data]](https://huggingface.co/datasets/ONE-Lab/LiveVQA-new/tree/main)
 
 Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Dongping Chen, Zetong Zhou, Benlin Liu, Yao Wan1, Zhou Zhao, Philip S. Yu, Ranjay Krishna
 
@@ -39,7 +39,7 @@ Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Dongping Chen, Zetong Zh
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025 Workshop</div><img src='images/livevqa0.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**LIVEVQA: Assessing Models with Live Visual Knowledge**[PDF](https://openreview.net/pdf?id=sLFrSp7xNs)
+**LIVEVQA: Assessing Models with Live Visual Knowledge**[[PDF]](https://openreview.net/pdf?id=sLFrSp7xNs)
 
 Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Benlin Liu, Yao Wan, Dongping Chen
 
