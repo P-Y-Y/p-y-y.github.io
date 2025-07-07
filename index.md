@@ -24,7 +24,7 @@ At present, I am working with Professor Yao Wan at HUST and am a PhD applicant f
 My research interests are deeply rooted in the latest advancements in generative models, especially multimodal.
 
 # 📝 Publications 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/livevqa1.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/livevqa1.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Seeking and Updating with Live Visual Knowledge](https://openreview.net/pdf?id=sLFrSp7xNs)
