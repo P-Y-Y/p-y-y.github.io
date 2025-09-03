@@ -49,6 +49,7 @@ Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Benlin Liu, Yao Wan, Don
 </div>
 
 # 🎖 Honors and Awards
+- CCF Elite Collegiate Award (2025)
 - Golden Medal, ACM-CCPC Girls' Division(2024)
 - Silver Medal, ACM-ICPC Asia Shenyang Regional Contest (2024)
 - Bronze Medal, National Olympiad in Informatics (NOI) (2021)
