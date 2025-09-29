@@ -24,7 +24,7 @@ At present, I am working with Professor Yao Wan at HUST and am a PhD applicant f
 My research interests are deeply rooted in the latest advancements in generative models, especially multimodal.
 
 # 📝 Publications 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/livevqa1.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS2025</div><img src='images/livevqa1.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Seeking and Updating with Live Visual Knowledge** [[PDF]](https://arxiv.org/pdf/2504.05288)[[Github]](https://github.com/fumingyang2004/LIVEVQA)[[Website]](https://livevqa.github.io/)[[Data]](https://huggingface.co/datasets/ONE-Lab/LiveVQA-new/tree/main)
