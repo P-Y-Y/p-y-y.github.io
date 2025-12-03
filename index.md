@@ -35,7 +35,7 @@ Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Dongping Chen, Zetong Zh
 
 </div></div>
 
-</div>
+
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Github Project</div><img src='images/livevqa0.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
