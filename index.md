@@ -26,29 +26,26 @@ My main research interests lie in **multimodal large-language models** and **mul
 # 📝 Publications 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/livevqa1.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
-
 **Seeking and Updating with Live Visual Knowledge** [[PDF]](https://arxiv.org/pdf/2504.05288)[[Github]](https://github.com/fumingyang2004/LIVEVQA)[[Website]](https://livevqa.github.io/)[[Data]](https://huggingface.co/datasets/ONE-Lab/LiveVQA-new/tree/main)
 
 Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Dongping Chen, Zetong Zhou, Benlin Liu, Yao Wan, Zhou Zhao, Philip S. Yu, Ranjay Krishna
 
 (<sup>*</sup> Equal contribution)
 
-</div></div>
-
-
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Github Project</div><img src='images/livevqa0.jpg' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**ULMEvalKit: One-Stop Eval ToolKit for Image Generation**[[Github]](https://github.com/ULMEvalKit/ULMEvalKit)
-
-Dongzhi Jiang, Renrui Zhang, Yankai Shu, **Yuyang Peng**, Zhuofan Zong, Yuchen Duan, etc.
-
+</div>
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Github Project</div><img src='images/ulmevalkit.png' alt="sym" width="30%"></div></div>
 <div class='paper-box-text' markdown="1">
+**ULMEvalKit: One-Stop Eval ToolKit for Image Generation**[[Github]](https://github.com/ULMEvalKit/ULMEvalKit)
 
+Dongzhi Jiang, Renrui Zhang, Yankai Shu, **Yuyang Peng**, Zhuofan Zong, Yuchen Duan, etc.
+
+</div></div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Github Project</div><img src='images/livevqa0.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
 **LIVEVQA: Assessing Models with Live Visual Knowledge**[[PDF]](https://openreview.net/pdf?id=sLFrSp7xNs)
 
 Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Benlin Liu, Yao Wan, Dongping Chen
