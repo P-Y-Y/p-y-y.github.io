@@ -35,7 +35,7 @@ Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Dongping Chen, Zetong Zh
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Github Project</div><img src='images/ulmevalkit.png' alt="sym" width="30%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Github Project</div><img src='images/ulmevalkit.png' alt="sym" width="60%"></div></div>
 <div class='paper-box-text' markdown="1">
 **ULMEvalKit: One-Stop Eval ToolKit for Image Generation**[[Github]](https://github.com/ULMEvalKit/ULMEvalKit)
 
