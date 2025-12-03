@@ -19,9 +19,9 @@ redirect_from:
 
 # Hi, I am Yuyang Peng (彭雨洋). # 
 
-At present, I am working with Professor Yao Wan at HUST and am a PhD applicant for Fall 2027. 
+I am **seeking** a PhD offer for Fall 2027, and I am **very keen on securing an internship opportunity** as soon as possible. Please contact me at **yuyangpeng@hust.edu.cn**.
 
-My research interests are deeply rooted in the latest advancements in generative models, especially multimodal.
+My main research interests lie in **multimodal large-language models** and **multi-agent systems**.
 
 # 📝 Publications 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/livevqa1.png' alt="sym" width="100%"></div></div>
@@ -33,10 +33,20 @@ Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Dongping Chen, Zetong Zh
 
 (<sup>*</sup> Equal contribution)
 
-</div>
+</div></div>
+
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2025 Workshop</div><img src='images/livevqa0.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Github Project</div><img src='images/livevqa0.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**ULMEvalKit: One-Stop Eval ToolKit for Image Generation**[[Github]](https://github.com/ULMEvalKit/ULMEvalKit)
+
+Dongzhi Jiang, Renrui Zhang, Yankai Shu, **Yuyang Peng**, Zhuofan Zong, Yuchen Duan, etc.
+
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Github Project</div><img src='images/ulmevalkit.png' alt="sym" width="30%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **LIVEVQA: Assessing Models with Live Visual Knowledge**[[PDF]](https://openreview.net/pdf?id=sLFrSp7xNs)
