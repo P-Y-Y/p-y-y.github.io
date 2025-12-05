@@ -19,7 +19,7 @@ redirect_from:
 
 # Hi, I am Yuyang Peng (彭雨洋). # 
 
-I am **seeking** a PhD offer for Fall 2027, and I am **very keen on securing an internship opportunity** as soon as possible. Please contact me at **yuyangpeng@hust.edu.cn**.
+I am an 27-Fall phd applicant, and I am **seeking** an internship opportunity in 2026 Spring or Summer. Please contact me at **yuyangpeng@hust.edu.cn**.
 
 My main research interests lie in **multimodal large-language models** and **multi-agent systems**.
 
