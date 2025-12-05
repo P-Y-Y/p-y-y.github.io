@@ -21,7 +21,7 @@ redirect_from:
 
 I am an 27-Fall phd applicant, and I am **seeking** an internship opportunity in 2026 Spring or Summer. Please contact me at **yuyangpeng@hust.edu.cn**.
 
-My main research interests lie in **multimodal large-language models** and **multi-agent systems**.
+My main research interests lie in **multimodal large-language models**, **multi-agent systems** and **computer vision**.
 
 # 📝 Publications 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/livevqa1.png' alt="sym" width="100%"></div></div>
