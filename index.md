@@ -43,10 +43,10 @@ Dongzhi Jiang, Renrui Zhang, Yankai Shu, **Yuyang Peng**, Zhuofan Zong, Yuchen D
 
 </div></div>
 
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR2025 Workshop</div><img src='images/livevqa0.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 **LIVEVQA: Assessing Models with Live Visual Knowledge**[[PDF]](https://openreview.net/pdf?id=sLFrSp7xNs)
+
 
 Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Benlin Liu, Yao Wan, Dongping Chen
 
