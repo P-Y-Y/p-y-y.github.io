@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Yuyang Peng (彭雨洋) is an undergraduate student at the College of Computer Science, and now a research intern at USC under the supervision of Prof.Jieyu Zhao. 
+Yuyang Peng (彭雨洋) is an undergraduate student at the College of Computer Science.
 
 Her main research interests lie in **multimodal large-language models**, **multi-agent systems** and **computer vision**.
 
