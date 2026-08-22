@@ -44,6 +44,17 @@ Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Dongping Chen, Zetong Zh
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACL 2026 Findings</div><img src='images/worldwide-livevqa.jpg' alt="Worldwide LiveVQA overview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+**Worldwide LiveVQA: Real-Time Visual Knowledge Seeking and Updating Across Languages** [[PDF]](https://aclanthology.org/2026.findings-acl.1984.pdf)[[Github]](https://github.com/huangxuanao/Worldwide-LiveVQA)[[Website]](https://worldwide-livevqa.github.io/)[[Data]](https://huggingface.co/datasets/reiofa/Worldwide-LiveVQA)
+
+Xuanao Huang<sup>*</sup>, Xingjia Liu<sup>*</sup>, Zetong Zhou, **Yuyang Peng**, Yao Wan, Dongping Chen
+
+(<sup>*</sup> Equal contribution)
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Github Project</div><img src='images/ulmevalkit.png' alt="sym" width="60%"></div></div>
 <div class='paper-box-text' markdown="1">
 **ULMEvalKit: One-Stop Eval ToolKit for Image Generation**[[Github]](https://github.com/ULMEvalKit/ULMEvalKit)
