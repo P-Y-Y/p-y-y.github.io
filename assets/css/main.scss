@@ -55,6 +55,11 @@
         display: flex;
         width: 100%;
         order: 2;
+
+        > div {
+            position: relative;
+        }
+
         img {
             max-width: 400px;
             box-shadow: 3px 3px 6px #888;
@@ -164,6 +169,9 @@ h1:before, .anchor:before {
     padding-left: 1rem;
     padding-right: 1rem;
     position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
     margin-top: .5em;
     margin-left: -.5em;
     color: white;
