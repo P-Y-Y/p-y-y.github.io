@@ -44,7 +44,7 @@ Mingyang Fu<sup>*</sup>,  **Yuyang Peng**<sup>*</sup>, Dongping Chen, Zetong Zh
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACL 2026 Findings</div><img src='images/worldwide-livevqa.jpg' alt="Worldwide LiveVQA overview" width="100%"></div></div>
+<div class='paper-box paper-box--compact-image'><div class='paper-box-image'><div><div class="badge">ACL 2026 Findings</div><img src='images/worldwide-livevqa.jpg' alt="Worldwide LiveVQA overview"></div></div>
 <div class='paper-box-text' markdown="1">
 **Worldwide LiveVQA: Real-Time Visual Knowledge Seeking and Updating Across Languages** [[PDF]](https://aclanthology.org/2026.findings-acl.1984.pdf)[[Github]](https://github.com/huangxuanao/Worldwide-LiveVQA)[[Website]](https://worldwide-livevqa.github.io/)[[Data]](https://huggingface.co/datasets/reiofa/Worldwide-LiveVQA)
 
