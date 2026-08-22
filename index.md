@@ -22,6 +22,17 @@ Yuyang Peng (彭雨洋) is an undergraduate student at the College of Computer S
 Her main research interests lie in **multimodal large-language models**, **multi-agent systems** and **computer vision**.
 
 # 📝 Publications 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2026</div><img src='images/coact.jpg' alt="CoAct framework" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+**Parallelizing LLM Agent Execution with Contrastive Task Allocation** [[PDF]](https://dl.acm.org/doi/pdf/10.1145/3770855.3817872)
+
+**Yuyang Peng**<sup>*</sup>, Yanling Xu<sup>*</sup>, Shuyi Wang, Xiaofei Liao, Qinbin Li
+
+(<sup>*</sup> Equal contribution)
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/livevqa1.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 **Seeking and Updating with Live Visual Knowledge** [[PDF]](https://arxiv.org/pdf/2504.05288)[[Github]](https://github.com/fumingyang2004/LIVEVQA)[[Website]](https://livevqa.github.io/)[[Data]](https://huggingface.co/datasets/ONE-Lab/LiveVQA-new/tree/main)
