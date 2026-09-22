@@ -585,7 +585,9 @@
       for (var i = 0; i < stops.length && !cancel; i++) {
         var el = $(stops[i][0]);
         label.textContent = 'scroll(down)';
-        el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+        // scroll only the window: scrollIntoView would also scroll overflow:hidden cards
+        var er = el.getBoundingClientRect();
+        window.scrollTo({ top: window.scrollY + er.top - (window.innerHeight - er.height) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
         await sleep(900);
         if (cancel) break;
         var r = el.getBoundingClientRect();
