@@ -1140,7 +1140,7 @@ kbd {
 .pet.is-in { opacity: 1; transform: none; }
 .pet.is-hidden { display: none; }
 .pet__sprite {
-  width: 104px;
+  width: 150px;
   aspect-ratio: 192 / 208;
   background-repeat: no-repeat;
   background-size: 800% 1100%;
@@ -1234,7 +1234,7 @@ kbd {
 .pet-summon:hover { transform: rotate(-12deg) scale(1.08); }
 
 @media (max-width: 640px) {
-  .pet__sprite { width: 76px; }
+  .pet__sprite { width: 112px; }
   .pet__close { opacity: 1; width: 20px; height: 20px; font-size: 13px; }
   .pet__bubble { max-width: 180px; font-size: .8rem; }
 }
