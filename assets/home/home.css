@@ -1125,6 +1125,120 @@ kbd {
 }
 .tour-ripple { position: fixed; z-index: 79; }
 
+/* ---------- Soul仔 desktop pet ---------- */
+
+.pet {
+  position: fixed;
+  right: 20px;
+  bottom: 18px;
+  z-index: 70;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.3,1.4,.5,1);
+  pointer-events: none;
+}
+.pet.is-in { opacity: 1; transform: none; }
+.pet.is-hidden { display: none; }
+.pet__sprite {
+  width: 104px;
+  aspect-ratio: 192 / 208;
+  background-repeat: no-repeat;
+  background-size: 800% 1100%;
+  background-position: 0 0;
+  cursor: grab;
+  pointer-events: auto;
+  touch-action: none;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .22));
+  -webkit-user-select: none;
+          user-select: none;
+  outline: none;
+}
+.pet__sprite:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 12px; }
+.pet.is-drag .pet__sprite { cursor: grabbing; filter: drop-shadow(0 18px 16px rgba(0, 0, 0, .28)); }
+
+.pet__bubble {
+  position: absolute;
+  right: 70%;
+  bottom: 88%;
+  width: max-content;
+  max-width: 220px;
+  padding: 9px 13px;
+  font-size: .84rem;
+  line-height: 1.45;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px 14px 4px 14px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transform: translateY(6px) scale(.96);
+  transform-origin: 100% 100%;
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+}
+.pet.is-talking .pet__bubble { opacity: 1; transform: none; }
+.pet.is-left .pet__bubble { right: auto; left: 70%; border-radius: 14px 14px 14px 4px; transform-origin: 0 100%; }
+
+.pet__close {
+  position: absolute;
+  top: 2px; right: 6px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 22px; height: 22px;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--ink-2);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: auto;
+}
+.pet:hover .pet__close, .pet__close:focus-visible { opacity: 1; }
+
+.pet__note {
+  position: absolute;
+  top: 6px; left: 8px;
+  font-size: 1.1rem;
+  color: var(--accent-2);
+  opacity: 0;
+  pointer-events: none;
+}
+.pet.is-jamming .pet__note { animation: noteFloat 1.6s ease-out infinite; }
+@keyframes noteFloat {
+  0% { opacity: 0; transform: translate(0, 10px) rotate(-10deg); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-18px, -34px) rotate(12deg); }
+}
+
+.pet-summon {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 70;
+  display: none;
+  width: 42px; height: 42px;
+  font-size: 1.2rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+.pet-summon.is-shown { display: grid; place-items: center; }
+.pet-summon:hover { transform: rotate(-12deg) scale(1.08); }
+
+@media (max-width: 640px) {
+  .pet__sprite { width: 76px; }
+  .pet__close { opacity: 1; width: 20px; height: 20px; font-size: 13px; }
+  .pet__bubble { max-width: 180px; font-size: .8rem; }
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 960px) {

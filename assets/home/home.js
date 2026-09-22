@@ -491,6 +491,7 @@
       var L = isZh()
         ? { idle: '点一首歌试听', load: '加载中 · ', play: '正在播放 · ', pause: '已暂停 · ' }
         : { idle: 'Tap a song to play a preview', load: 'Loading · ', play: 'Now playing · ', pause: 'Paused · ' };
+      document.dispatchEvent(new CustomEvent('musicstate', { detail: { playing: playing } }));
       status.textContent = current < 0 ? L.idle
         : (playing ? (loading ? L.load : L.play) : L.pause) + title(current);
     }
