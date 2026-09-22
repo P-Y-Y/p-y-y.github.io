@@ -1,4 +1,4 @@
-/* Soul仔 — a web port of my Codex desktop pet.
+/* Soul (Soul仔) — a web port of my Codex desktop pet.
    Sprite layout and timings follow the Codex pet v2 format:
    8 columns x 11 rows of 192x208 cells; rows 9-10 hold 16 "look" directions. */
 (function () {
@@ -29,10 +29,10 @@
 
   var LINES = {
     en: [
-      "Hi! I'm Soul仔 🎸",
+      "Hi! I'm Soul 🎸",
       'Yuyang is applying for PhD · Fall 2027 ✨',
       'Try a song in the Music section ♪',
-      'Also a 陶喆 fan? Say hi to Yuyang!',
+      'Also a David Tao fan? Say hi to Yuyang!',
       'Drag me around — I don\'t mind.',
       'Coffee chat? pengcarol7@gmail.com ☕'
     ],
@@ -59,7 +59,7 @@
   wrap.innerHTML =
     '<div class="pet__bubble" role="status" aria-live="polite"></div>' +
     '<button class="pet__close" type="button" aria-label="Hide pet">×</button>' +
-    '<div class="pet__sprite" role="button" tabindex="0" aria-label="Soul仔 — a little David Tao pet. Click to chat, drag to move."></div>' +
+    '<div class="pet__sprite" role="button" tabindex="0" aria-label="Soul — a little David Tao pet. Click to chat, drag to move."></div>' +
     '<span class="pet__note" aria-hidden="true">♪</span>';
   var sprite = wrap.querySelector('.pet__sprite');
   var bubble = wrap.querySelector('.pet__bubble');
