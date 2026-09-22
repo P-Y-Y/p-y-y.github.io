@@ -184,7 +184,7 @@
         q: 'contact',
         tile: 'contact',
         think: 'Contact tile → email',
-        obs: 'yuyangpeng@hust.edu.cn'
+        obs: 'pengcarol7@gmail.com'
       }
     ];
 
