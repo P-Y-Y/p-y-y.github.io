@@ -66,7 +66,7 @@ redirect_from:
         <h1 class="hero__name">Yuyang Peng <span class="hero__cn">彭雨洋</span></h1>
         <p class="hero__tagline">
           <span data-i18n="hero.tag">I build agents that</span>
-          <span class="typer" id="typer" data-words='["see the live world.","work in parallel.","use computers like we do.","learn from synthetic GUIs."]' data-words-zh='["看懂实时变化的世界。","高效地并行协作。","像人一样使用电脑。","从合成 GUI 数据中学会操作。"]'>see the live world.</span><span class="caret" aria-hidden="true"></span>
+          <span class="typer" id="typer" data-words='["see the live world.","work in parallel.","use computers like we do.","learn from synthetic data."]' data-words-zh='["看懂实时变化的世界。","高效地并行协作。","像人一样使用电脑。","从合成数据中学会操作。"]'>see the live world.</span><span class="caret" aria-hidden="true"></span>
         </p>
         <p data-i18n="hero.sub" class="hero__sub">CS undergraduate at <strong>Huazhong University of Science and Technology</strong>, currently interning at <strong>Qwen Group, Alibaba</strong> and working with Prof. Jieyu Zhao at <strong>USC</strong>.</p>
         <div class="hero__cta">
@@ -128,13 +128,14 @@ redirect_from:
         </div>
         <div class="about__body reveal">
           <p data-i18n="about.lead" class="lead">Hi! I'm Yuyang, a fourth-year Computer Science (Turing Class) undergraduate at HUST. I'm curious about how machines can <em>perceive</em> a constantly changing world and <em>act</em> in it — from answering questions about today's news images, to coordinating fleets of LLM agents, to operating real desktop software.</p>
-          <p data-i18n="about.p2">Right now I'm working on <strong>computer-use agents</strong>: synthesizing GUI training data at scale and using reinforcement learning to teach agents to complete complex, multi-step tasks. I'm also interning at <strong>Qwen Group, Alibaba</strong>, developing benchmarks to evaluate the image generation capabilities of <strong>Qwen-Image</strong>. Before that I competed in algorithmic programming (NOI, ICPC, CCPC), which still shapes how I think about systems and efficiency.</p>
+          <p data-i18n="about.p2">Right now I'm working on <strong>computer-use agents</strong>: building automated data synthesis pipelines that help agents learn complex, multi-step tasks across GUI, coding, and other computer-use settings. I'm also interning at <strong>Qwen Group, Alibaba</strong>, developing benchmarks to evaluate the image generation capabilities of <strong>Qwen-Image</strong>. Before that I competed in algorithmic programming (NOI, ICPC, CCPC), which still shapes how I think about systems and efficiency.</p>
           <div class="chips">
             <span data-i18n="chip.c1" class="chip">Multimodal Learning</span>
             <span data-i18n="chip.c2" class="chip">Computer Vision</span>
             <span data-i18n="chip.c3" class="chip">LLM Agents</span>
             <span data-i18n="chip.c4" class="chip">Computer-Use Agents</span>
-            <span data-i18n="chip.c5" class="chip">Reinforcement Learning</span>
+            <span data-i18n="chip.c5" class="chip">Synthetic Data for Agents</span>
+            <span data-i18n="chip.c6" class="chip">Agent Evaluation</span>
           </div>
           <div class="stats">
             <div class="stat"><span class="stat__n" data-count="4">0</span><span data-i18n="stat.s1" class="stat__l">papers · plus 1 open-source project</span></div>
@@ -172,15 +173,15 @@ redirect_from:
             <h3 data-i18n="res.t1">Computer-Use Agents</h3>
             <p data-i18n="res.o1" class="tl__org">Research Intern · Prof. Jieyu Zhao · University of Southern California</p>
             <ul>
-              <li data-i18n="res.b11">GUI synthetic data generation and reinforcement-learning training techniques for computer-use agents.</li>
-              <li data-i18n="res.b12">Building automated synthesis pipelines that improve agent policy learning on complex GUI tasks.</li>
+              <li data-i18n="res.b11">Building automated data synthesis pipelines for policy learning of computer-use agents (CUAs).</li>
+              <li data-i18n="res.b12">Extending data synthesis beyond GUI tasks to coding and other complex computer-use tasks.</li>
             </ul>
           </div>
         </li>
         <li class="tl reveal">
           <span class="tl__node"></span>
           <div class="tl__card">
-            <div class="tl__top"><span data-i18n="res.d2" class="tl__date">Aug 2025 — Feb 2026</span><span data-i18n="res.g2" class="tag">KDD 2026 · First author</span></div>
+            <div class="tl__top"><span data-i18n="res.d2" class="tl__date">Aug 2025 — Feb 2026</span><span data-i18n="res.g2" class="tag">KDD 2026 · Co-first author</span></div>
             <h3 data-i18n="res.t2">CoAct: Parallel LLM Agents</h3>
             <p data-i18n="res.o2" class="tl__org">Research Intern · Prof. Qinbin Li · HUST</p>
             <ul>
@@ -227,26 +228,15 @@ redirect_from:
       <p data-i18n="pub.note" class="pubs__note reveal"><sup>*</sup> equal contribution</p>
 
       <div class="pubs" id="pubs">
-        <article class="pub reveal" data-tags="agents">
-          <div class="pub__img"><picture><source srcset="images/web/grid-bench.webp" type="image/webp"><img src="images/web/grid-bench.jpg" alt="Grid-Bench discrete-world simulation overview" decoding="async"></picture><span class="venue venue--arxiv">arXiv 2026</span></div>
-          <div class="pub__body">
-            <h3>Grid-Bench: Can LLMs Predict How Discrete Worlds Change?</h3>
-            <p class="pub__authors">Zixiang Xu, Zirui Song, Wanrong Zheng, Chiyu Zhang, Yue Huang, <b>Yuyang Peng</b>, Kexin Zhang, Jinkun Chen, Xiuying Chen, Xiangliang Zhang, Yan Liu, Laurent Itti, Frank Shyu, Xiaoqiang Luo, Sandeep Pandey, Xi Liu, Luke Simon, Xiyang Hu, Yue Zhao</p>
-            <div class="pub__links">
-              <a href="https://arxiv.org/pdf/2610.22312">PDF</a>
-              <a href="https://github.com/grid-bench/Grid-Bench" data-i18n="pub.code">Code</a>
-              <a href="https://grid-bench.github.io/" data-i18n="pub.web">Website</a>
-              <a href="https://huggingface.co/datasets/xzx34/Grid-Bench" data-i18n="pub.data">Data</a>
-            </div>
-          </div>
-        </article>
-
         <article class="pub reveal" data-tags="first agents">
           <div class="pub__img"><picture><source srcset="images/web/coact.webp" type="image/webp"><img src="images/web/coact.jpg" alt="CoAct framework overview" decoding="async"></picture><span class="venue venue--kdd">KDD 2026</span></div>
           <div class="pub__body">
             <h3>Parallelizing LLM Agent Execution with Contrastive Task Allocation</h3>
             <p class="pub__authors"><b>Yuyang Peng</b><sup>*</sup>, Yanling Xu<sup>*</sup>, Shuyi Wang, Xiaofei Liao, Qinbin Li</p>
-            <div class="pub__links"><a href="https://dl.acm.org/doi/pdf/10.1145/3770855.3817872">PDF</a></div>
+            <div class="pub__links">
+              <a href="https://dl.acm.org/doi/pdf/10.1145/3770855.3817872">PDF</a>
+              <a href="https://github.com/P-Y-Y/CoAct" data-i18n="pub.code">Code</a>
+            </div>
           </div>
         </article>
 
@@ -262,6 +252,20 @@ redirect_from:
               <a href="https://huggingface.co/datasets/ONE-Lab/LiveVQA-new/tree/main" data-i18n="pub.data">Data</a>
             </div>
             <p class="pub__also"><span data-i18n="pub.also">Earlier version at the <b>CVPR 2025 Workshop</b>:</span> <i>LIVEVQA: Assessing Models with Live Visual Knowledge</i> · <a href="https://openreview.net/pdf?id=sLFrSp7xNs">PDF</a></p>
+          </div>
+        </article>
+
+        <article class="pub reveal" data-tags="agents">
+          <div class="pub__img"><picture><source srcset="images/web/grid-bench.webp" type="image/webp"><img src="images/web/grid-bench.jpg" alt="Grid-Bench discrete-world simulation overview" decoding="async"></picture><span class="venue venue--arxiv">arXiv 2026</span></div>
+          <div class="pub__body">
+            <h3>Grid-Bench: Can LLMs Predict How Discrete Worlds Change?</h3>
+            <p class="pub__authors">Zixiang Xu, Zirui Song, Wanrong Zheng, Chiyu Zhang, Yue Huang, <b>Yuyang Peng</b>, Kexin Zhang, Jinkun Chen, Xiuying Chen, Xiangliang Zhang, Yan Liu, Laurent Itti, Frank Shyu, Xiaoqiang Luo, Sandeep Pandey, Xi Liu, Luke Simon, Xiyang Hu, Yue Zhao</p>
+            <div class="pub__links">
+              <a href="https://arxiv.org/pdf/2610.22312">PDF</a>
+              <a href="https://github.com/grid-bench/Grid-Bench" data-i18n="pub.code">Code</a>
+              <a href="https://grid-bench.github.io/" data-i18n="pub.web">Website</a>
+              <a href="https://huggingface.co/datasets/xzx34/Grid-Bench" data-i18n="pub.data">Data</a>
+            </div>
           </div>
         </article>
 
