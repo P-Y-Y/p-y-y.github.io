@@ -1261,7 +1261,8 @@ kbd {
   .nav__brand { margin-right: 4px; }
   .nav__links { overflow-x: auto; scrollbar-width: none; }
   .nav__links::-webkit-scrollbar { display: none; }
-  .nav__links a { padding: 7px 10px; font-size: .82rem; }
+  .nav__links a { padding: 7px 10px; font-size: .82rem; white-space: nowrap; flex-shrink: 0; }
+  .nav__links a[data-i18n="nav.cv"] { order: -1; }
   .nav__links a[href="#contact"],
   .nav__links a[href="#music"] { display: none; }
 }
