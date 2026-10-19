@@ -757,6 +757,7 @@ main, .footer { position: relative; z-index: 1; }
 .venue--acl { background: linear-gradient(110deg, #dc2626, #f97316); }
 .venue--oss { background: linear-gradient(110deg, #0f766e, #0ea5a4); }
 .venue--cvpr { background: linear-gradient(110deg, #1d4ed8, #0ea5e9); }
+.venue--arxiv { background: linear-gradient(110deg, #475569, #64748b); }
 .pub__body h3 {
   margin: 0 0 10px;
   font-family: var(--display);

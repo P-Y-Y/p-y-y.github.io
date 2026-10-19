@@ -46,7 +46,7 @@
     "hero.cta1": "看看我的工作",
     "hero.cta2": "联系我",
     "tile.pub": "论文",
-    "tile.pubm": "3 篇论文 + 1 个项目",
+    "tile.pubm": "4 篇论文 + 1 个项目",
     "tile.res": "研究",
     "tile.resm": "4 段经历",
     "tile.hon": "荣誉",
@@ -290,8 +290,8 @@
         q: 'yuyang peng publications',
         tile: 'publications',
         think: 'Publications tile should list papers',
-        obs: 'KDD 2026 · CoAct (first author)',
-        zh: { goal: '找到她最新的论文', q: '彭雨洋 论文', think: '「论文」磁贴里应该有列表', obs: 'KDD 2026 · CoAct（第一作者）' }
+        obs: 'arXiv 2026 · Grid-Bench',
+        zh: { goal: '找到她最新的论文', q: '彭雨洋 论文', think: '「论文」磁贴里应该有列表', obs: 'arXiv 2026 · Grid-Bench' }
       },
       {
         goal: 'what is she working on now?',
