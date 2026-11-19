@@ -42,7 +42,7 @@
     "nav.cv": "简历",
     "hero.callout": "<strong>正在申请 2027 Fall 博士项目。</strong>非常欢迎约 coffee chat，也期待各种合作机会，随时联系我！",
     "hero.tag": "我希望让 AI agent",
-    "hero.sub": "<strong>华中科技大学</strong>计算机专业本科生，目前在 <strong>Qwen Group, Alibaba</strong> 实习；此前在 <strong>USC</strong> 跟随 Jieyu Zhao 教授做科研实习。",
+    "hero.sub": "<strong>华中科技大学</strong>计算机专业本科生，目前在 <strong>Alibaba Group</strong> 实习；此前在 <strong>USC</strong> 跟随 Jieyu Zhao 教授做科研实习。",
     "hero.cta1": "看看我的工作",
     "hero.cta2": "联系我",
     "tile.pub": "论文",
@@ -55,7 +55,7 @@
     "about.h": "关于我",
     "about.loc": "📍 中国 · 武汉",
     "about.lead": "你好！我是彭雨洋，华中科技大学计算机科学与技术专业（图灵班）大四学生。我好奇机器如何<em>感知</em>一个不断变化的世界，并在其中<em>行动</em>——从回答关于今日新闻图片的问题，到协调成群的 LLM agent，再到操作真实的桌面软件。",
-    "about.p2": "我目前专注于<strong>计算机操作智能体（Computer-Use Agents）</strong>：搭建自动化数据合成流水线，帮助 agent 学会在 GUI、编程等多种计算机操作场景中完成复杂的多步任务。同时，我在 <strong>Qwen Group, Alibaba</strong> 实习，构建评测基准以评估 <strong>Qwen-Image 的图像生成能力</strong>。在此之前我一直参加算法竞赛（NOI、ICPC、CCPC），这段经历至今影响着我思考系统与效率的方式。",
+    "about.p2": "我目前专注于<strong>计算机操作智能体（Computer-Use Agents）</strong>：搭建自动化数据合成流水线，帮助 agent 学会在 GUI、编程等多种计算机操作场景中完成复杂的多步任务。同时，我在 <strong>Alibaba Group</strong> 实习，构建评测基准以评估 <strong>Qwen-Image 的图像生成能力</strong>。在此之前我一直参加算法竞赛（NOI、ICPC、CCPC），这段经历至今影响着我思考系统与效率的方式。",
     "chip.c1": "多模态学习",
     "chip.c2": "计算机视觉",
     "chip.c3": "LLM 智能体",
@@ -69,7 +69,7 @@
     "res.h": "科研经历",
     "res.alibaba.date": "2026.10 — 至今",
     "res.alibaba.title": "Qwen-Image 基准评测",
-    "res.alibaba.org": "科研实习 · Qwen Group, Alibaba",
+    "res.alibaba.org": "科研实习 · Alibaba Group",
     "res.alibaba.work": "构建评测基准，评估 Qwen-Image 的图像生成能力。",
     "res.d1": "2026.02 — 2026.10",
     "res.now": "● 进行中",
@@ -303,8 +303,8 @@
         q: 'current research',
         tile: 'research',
         think: 'Research tile has the timeline',
-        obs: 'Qwen-Image benchmarks @ Qwen Group, Alibaba',
-        zh: { goal: '她现在在做什么研究？', q: '当前研究', think: '「研究」磁贴里有时间线', obs: 'Qwen-Image 基准评测 @ Qwen Group, Alibaba' }
+        obs: 'Qwen-Image benchmarks @ Alibaba Group',
+        zh: { goal: '她现在在做什么研究？', q: '当前研究', think: '「研究」磁贴里有时间线', obs: 'Qwen-Image 基准评测 @ Alibaba Group' }
       },
       {
         goal: 'any competition results?',
